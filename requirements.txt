@@ -5,3 +5,4 @@ rank_bm25
 sentence-transformers
 pillow
 python-dotenv
+streamlit

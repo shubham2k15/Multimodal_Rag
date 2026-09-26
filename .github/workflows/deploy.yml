@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Stop existing container
+        run: sudo docker stop rag-app || true
+
+      - name: Remove existing container
+        run: sudo docker rm rag-app || true
+
+      - name: Build Docker image
+        run: sudo docker build -t rag-app-image .
+
+      - name: Run Docker container
+        run: sudo docker run -d -p 8080:8080 --name rag-app -e GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }} rag-app-image
