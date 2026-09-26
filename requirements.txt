@@ -1,0 +1,7 @@
+google-genai
+chromadb
+unstructured[pdf]
+rank_bm25
+sentence-transformers
+pillow
+python-dotenv

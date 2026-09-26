@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+data/chroma_db/
+data/content_store/images/
+data/raw_pdfs/
+.vscode/
+.idea/
